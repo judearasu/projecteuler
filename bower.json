@@ -1,0 +1,28 @@
+{
+  "name": "projecteuler",
+  "description": "Mathematical problems",
+  "main": "index.js",
+  "authors": [
+    "Thillai Narayanan"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "maths",
+    "javascript",
+    "project",
+    "euler"
+  ],
+  "homepage": "https://github.com/judearasu/projecteuler",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mocha": "~2.4.5",
+    "chai": "~3.5.0"
+  }
+}
