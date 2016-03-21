@@ -1,4 +1,4 @@
-/** Modular Patter **/
+/** Modular Pattern **/
 // 	var euler001 = (function(){
 // 		'use strict';
 // 		var sum = 0;
