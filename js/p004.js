@@ -25,6 +25,6 @@ var euler004 = (function() {
         }
       }
     }
-    return Math.max.apply(null, arr)
+    return Math.max.apply(null, arr);
   }
 })();
