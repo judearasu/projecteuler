@@ -3,7 +3,7 @@
 describe('Euler002', function() {
   describe('Internal Methods', function() {
     it('should be defined', function() {
-      expect(typeof euler002).to.be.equal("object")
+      expect(typeof euler002).to.be.equal("object");
     });
   });
 

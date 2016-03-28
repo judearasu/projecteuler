@@ -10,44 +10,72 @@ Acceptance Criteria:
 Find the prime number from 1 to  20 and then find the highest exponent on the lowest price minus the largest prime.
 **/
 
-var euler005 = (function(){
+var euler005 = (function() {
+  var PRIME_NUMBERS = [];
   return {
-    getSmallestMultiple : getSmallestMultiple,
-    isPrime : isPrime,
-    setPrimes : setPrimes
+    getSmallestMultiple: getSmallestMultiple,
+    _setPrimes: _setPrimes,
+    _isPrime: _isPrime,
+    _getHighestExponent: _getHighestExponent
+
   };
 
-  function getSmallestMultiple(min_value, max_value){
-      setPrimes(min_value, max_value);
+
+  function getSmallestMultiple(min_value, max_value) {
+    _setPrimes(min_value, max_value);
+    //return Math.max.apply(null,PRIME_NUMBERS);
+    _getHighestExponent(PRIME_NUMBERS, max_value);
   }
 
-  function setPrimes(min_value, max_value){
-    var primeNumbers = [];
-
-       for(var i = min_value; i <= max_value; i++){
-         if(isPrime(i)){
-           primeNumbers.push(i);
-         }
-       }
-       return primeNumbers;
-  }
-  function isPrime(num){
-      var x = 2, y = 1;
-      if( num === x){
-        return true;
+  function _setPrimes(min_value, max_value) {
+    for (var i = min_value; i <= max_value; i++) {
+      if (_isPrime(i)) {
+        PRIME_NUMBERS.push(i);
       }
-      if( num === y){
+    }
+    return PRIME_NUMBERS;
+  }
+
+  function _getHighestExponent(PRIME_NUMBERS, max_value) {
+    //The highest exponent on 2 in any prime factorization of a number between 1 and 20 is 4,
+    //as 2 Pow 4 = 16 but 2 pow 5=32>20
+
+    for (var i = 0; i <= PRIME_NUMBERS.length; i++) {
+      var powerValue = 4;
+      _powerCalculator(PRIME_NUMBERS[i], powerValue, max_value);
+    }
+  }
+
+  function _powerCalculator(primeNumber, powerValue, max_value) {
+    var arr = [];
+    for (var j = 4; j >= 1; j--) {
+      if (Math.pow(primeNumber, powerValue) < max_value) {
+        var output = Math.pow(primeNumber, powerValue);
+        console.log(output);
+        break;
+      }
+      powerValue -= 1
+    }
+  }
+
+  function _isPrime(num) {
+    var x = 2;
+    var y = 1;
+    if (num === x) {
+      return true;
+    }
+    if (num === y) {
+      return false;
+    }
+    // Use Square root to reduce iteration
+    var sqrt = Math.sqrt(num);
+    while (x <= sqrt) {
+      if (num % x === 0) {
         return false;
       }
-      // Use Square root to reduce iteration
-      var sqrt = Math.sqrt(num);
-      while(x <= sqrt){
-        if(num % x === 0){
-          return false;
-        }
-        x++;
-      }
-      return true;
+      x++;
+    }
+    return true;
   }
 
 })();
