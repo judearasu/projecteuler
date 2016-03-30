@@ -12,6 +12,7 @@ Find the prime number from 1 to  20 and then find the highest exponent on the lo
 
 var euler005 = (function() {
   var PRIME_NUMBERS = [];
+  var SMALL_MUL = [];
   return {
     getSmallestMultiple: getSmallestMultiple,
     _setPrimes: _setPrimes,
@@ -25,6 +26,10 @@ var euler005 = (function() {
     _setPrimes(min_value, max_value);
     //return Math.max.apply(null,PRIME_NUMBERS);
     _getHighestExponent(PRIME_NUMBERS, max_value);
+    var total = SMALL_MUL.reduce(function(a, b) {
+      return a * b;
+    });
+    return total;
   }
 
   function _setPrimes(min_value, max_value) {
@@ -39,7 +44,6 @@ var euler005 = (function() {
   function _getHighestExponent(PRIME_NUMBERS, max_value) {
     //The highest exponent on 2 in any prime factorization of a number between 1 and 20 is 4,
     //as 2 Pow 4 = 16 but 2 pow 5=32>20
-
     for (var i = 0; i <= PRIME_NUMBERS.length; i++) {
       var powerValue = 4;
       _powerCalculator(PRIME_NUMBERS[i], powerValue, max_value);
@@ -47,15 +51,15 @@ var euler005 = (function() {
   }
 
   function _powerCalculator(primeNumber, powerValue, max_value) {
-    var arr = [];
     for (var j = 4; j >= 1; j--) {
       if (Math.pow(primeNumber, powerValue) < max_value) {
         var output = Math.pow(primeNumber, powerValue);
-        console.log(output);
+        SMALL_MUL.push(output);
         break;
       }
       powerValue -= 1
     }
+    return SMALL_MUL;
   }
 
   function _isPrime(num) {

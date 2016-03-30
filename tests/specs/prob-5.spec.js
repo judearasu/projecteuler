@@ -23,6 +23,10 @@ describe.only('Euler005', function() {
       expect(euler005.getSmallestMultiple).to.have.length(2);
     });
 
+    it('should return a value', function(){
+      expect(euler005.getSmallestMultiple(1,20)).to.equal(232792560);
+    });
+
     // it('should return the highest value 7 from 1 to 10', function(){
     //   expect(euler005.getSmallestMultiple(1,10)).to.equal(7);
     // });
