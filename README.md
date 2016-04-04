@@ -1,6 +1,8 @@
 ProjectEuler
 ============
 
+[![Join the chat at https://gitter.im/judearasu/projecteuler](https://badges.gitter.im/judearasu/projecteuler.svg)](https://gitter.im/judearasu/projecteuler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve.
 
 ## Solutions
