@@ -1,6 +1,6 @@
 /*eslint-env node, mocha */
 
-describe.only('Euler004', function() {
+describe('Euler004', function() {
   describe('Internal Methods', function() {
     it('should be defined', function() {
       expect(typeof euler004).to.be.equal("object")
