@@ -1,6 +1,6 @@
 /*eslint-env node, mocha */
 
-describe.only('Euler006', function() {
+describe('Euler006', function() {
   describe('Internal Methods', function() {
     it('should be defined', function() {
       expect(typeof euler006).to.be.equal("object")
@@ -29,9 +29,9 @@ describe.only('Euler006', function() {
 
   describe('getDiff function', function() {
     it('should return the value Y', function() {
-        euler006.getSumOfSquares(100);
-        euler006.getSquaresOfSum(100);
-        expect(euler006.getDiff()).to.be.equal(25164150);
+      euler006.getSumOfSquares(100);
+      euler006.getSquaresOfSum(100);
+      expect(euler006.getDiff()).to.be.equal(25164150);
     });
   });
 });
