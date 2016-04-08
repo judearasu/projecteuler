@@ -10,29 +10,15 @@ var euler006 = (function() {
   var y = 0;
   var i = 0;
   var j = 0;
-  var result = 0;
+  var sum;
 
   return {
-    getSquaresSum: getSquaresSum,
-    getSumSquares: getSumSquares,
-    getValueX: getValueX,
-    getValueY: getValueY,
-    getDiff : getDiff
+    getSumOfSquares: getSumOfSquares,
+    getSquaresOfSum: getSquaresOfSum,
+    getDiff: getDiff
   };
 
-  function getValueX() {
-    return x;
-  }
-
-  function getValueY(){
-    return y;
-  }
-
-  function getDiff(){
-    return y-x;
-  }
-
-  function getSquaresSum(max) {
+  function getSumOfSquares(max) {
     while (i <= max) {
       x += Math.pow(i, 2);
       i++;
@@ -40,15 +26,16 @@ var euler006 = (function() {
     return x;
   }
 
-  function getSumSquares(max) {
-    while (j <= max) {
+  function getSquaresOfSum(max) {
+    for (j; j <= max; j++) {
       y += j;
-      j++;
     }
-    y = Math.pow(y, 2);
-    return y;
+    sum = Math.pow(y, 2);
+    return sum;
   }
 
-
+  function getDiff() {
+    return result = sum - x;
+  }
 
 })();
