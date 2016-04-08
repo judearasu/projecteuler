@@ -30,6 +30,7 @@ var euler006 = (function() {
     for (j; j <= max; j++) {
       y += j;
     }
+    // Don't return via Y, Will produce diff resutl
     sum = Math.pow(y, 2);
     return sum;
   }
