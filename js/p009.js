@@ -22,7 +22,7 @@ var euler009 = (function() {
           break;
         }
         if(Math.pow(a,2)+Math.pow(b,2) === Math.pow(c,2)){
-          console.log(a,b,c, a+b+c, Math.pow(a,2)+Math.pow(b,2),Math.pow(c,2));
+          console.log(a,b,c, a+b+c, a*b*c, Math.pow(a,2)+Math.pow(b,2),Math.pow(c,2));
           return a*b*c;
         }
         b++;
