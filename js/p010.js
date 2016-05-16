@@ -22,6 +22,14 @@ euler010.prototype.getPrimeNumbers = function(value) {
   return true;
 }
 
-euler010.prototype.sumPrimes =  function(range){
-  
+euler010.prototype.sumPrimes = function(range) {
+  var n = 1;
+  var sum = [];
+  while (n <= range) {
+    if (this.getPrimeNumbers(n)) {
+      sum.push(n);
+    };
+    n++;
+  }
+  return sum.reduce(function(a,b){ return a+b});
 }
