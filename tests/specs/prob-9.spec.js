@@ -1,5 +1,5 @@
 /*eslint-env node, mocha */
-describe.only('Euler009', function(){
+describe('Euler009', function(){
   describe('Internal Methods', function(){
     it('should be defined', function(){
       expect(euler009).to.be.defined;
