@@ -20,7 +20,7 @@ euler010.prototype.getPrimeNumbers = function(value) {
     x++;
   }
   return true;
-}
+};
 
 euler010.prototype.sumPrimes = function(range) {
   var n = 1;
@@ -28,8 +28,10 @@ euler010.prototype.sumPrimes = function(range) {
   while (n <= range) {
     if (this.getPrimeNumbers(n)) {
       sum.push(n);
-    };
+    }
     n++;
   }
-  return sum.reduce(function(a,b){ return a+b});
-}
+  return sum.reduce(function(a, b) {
+    return a + b;
+  });
+};

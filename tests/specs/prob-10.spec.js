@@ -1,5 +1,5 @@
 /*eslint-env node, mocha */
-describe('Euler0010', function() {
+describe.only('Euler0010', function() {
   var obj1;
   it('should be defined', function() {
     expect(euler010).to.be.defined;
